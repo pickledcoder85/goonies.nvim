@@ -1,4 +1,4 @@
-# goonies-night
+# goonies.nvim
 
 A Neovim colorscheme inspired by 1985 adventure-movie nostalgia:
 - moonlit Oregon coastline blues
@@ -7,10 +7,17 @@ A Neovim colorscheme inspired by 1985 adventure-movie nostalgia:
 - cave-plum shadows
 - warm rust and wood accents
 
-## Install
+## Variants
+- `goonies-night`
+- `goonies-day`
 
-### lazy.nvim
+## Installation with lazy.nvim
+
 ```lua
+```
+```lua
+```lua
+```
 {
   dir = "~/path/to/goonies-night",
   name = "goonies-night",
@@ -20,15 +27,8 @@ A Neovim colorscheme inspired by 1985 adventure-movie nostalgia:
   end,
 }
 ```
-
-### packer.nvim
-```lua
-use({
-  "~/path/to/goonies-night",
-  config = function()
-    vim.cmd("colorscheme goonies-night")
-  end,
-})
+```
+```
 ```
 
 ## Palette vibe
