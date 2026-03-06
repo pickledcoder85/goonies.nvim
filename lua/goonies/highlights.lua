@@ -12,17 +12,24 @@ function M.apply(c, opts)
 
   vim.g.colors_name = "goonies-" .. (opts.variant or "night")
 
+  local is_day = opts.variant == "day"
+
+  local float_border = is_day and c.gold or c.blue
+  local cursorline_bg = is_day and c.bg_soft or c.bg_alt
+  local visual_bg = is_day and "#c9b67a" or c.diff_text
+  local telescope_border = is_day and c.gold or c.blue
+
   -- Base editor
   hi("Normal", { fg = c.fg, bg = c.bg })
   hi("NormalFloat", { fg = c.fg, bg = c.bg_alt })
-  hi("FloatBorder", { fg = c.blue, bg = c.bg_alt })
+  hi("FloatBorder", { fg = float_border, bg = c.bg_alt })
   hi("FloatTitle", { fg = c.gold, bg = c.bg_alt, bold = true })
   hi("ColorColumn", { bg = c.bg_soft })
   hi("Conceal", { fg = c.fg_muted })
   hi("Cursor", { fg = c.bg, bg = c.gold })
   hi("lCursor", { fg = c.bg, bg = c.gold })
   hi("CursorIM", { fg = c.bg, bg = c.gold })
-  hi("CursorLine", { bg = c.bg_alt })
+  hi("CursorLine", { bg = cursorline_bg })
   hi("CursorColumn", { bg = c.bg_alt })
   hi("Directory", { fg = c.cyan, bold = true })
   hi("EndOfBuffer", { fg = c.bg })
@@ -58,7 +65,7 @@ function M.apply(c, opts)
   hi("TabLineFill", { bg = c.bg })
   hi("TabLineSel", { fg = c.bg, bg = c.gold, bold = true })
   hi("Title", { fg = c.gold, bold = true })
-  hi("Visual", { bg = c.diff_text })
+  hi("Visual", { bg = visual_bg })
   hi("WarningMsg", { fg = c.orange, bold = true })
   hi("Whitespace", { fg = c.bg_soft })
   hi("WildMenu", { fg = c.bg, bg = c.gold, bold = true })
@@ -126,7 +133,7 @@ function M.apply(c, opts)
   hi("GitSignsChange", { fg = c.blue })
   hi("GitSignsDelete", { fg = c.red })
 
-  -- Treesitter / semantic groups
+  -- Treesitter
   hi("@comment", { link = "Comment" })
   hi("@keyword", { link = "Keyword" })
   hi("@keyword.function", { fg = c.plum, bold = true })
@@ -162,9 +169,9 @@ function M.apply(c, opts)
   hi("@lsp.type.keyword", { link = "Keyword" })
   hi("@lsp.type.type", { link = "Type" })
 
-  -- Common plugins
+  -- Telescope
   hi("TelescopeNormal", { fg = c.fg, bg = c.bg_alt })
-  hi("TelescopeBorder", { fg = c.blue, bg = c.bg_alt })
+  hi("TelescopeBorder", { fg = telescope_border, bg = c.bg_alt })
   hi("TelescopePromptBorder", { fg = c.gold, bg = c.bg_alt })
   hi("TelescopePromptTitle", { fg = c.bg, bg = c.gold, bold = true })
   hi("TelescopeResultsTitle", { fg = c.bg, bg = c.blue, bold = true })
@@ -172,6 +179,7 @@ function M.apply(c, opts)
   hi("TelescopeSelection", { bg = c.bg_soft, bold = true })
   hi("TelescopeMatching", { fg = c.gold, bold = true })
 
+  -- Completion
   hi("CmpItemAbbr", { fg = c.fg })
   hi("CmpItemAbbrMatch", { fg = c.gold, bold = true })
   hi("CmpItemAbbrMatchFuzzy", { fg = c.yellow, bold = true })
@@ -183,15 +191,18 @@ function M.apply(c, opts)
   hi("CmpItemKindKeyword", { fg = c.plum })
   hi("CmpItemKindSnippet", { fg = c.orange })
 
+  -- WhichKey
   hi("WhichKey", { fg = c.gold, bold = true })
   hi("WhichKeyGroup", { fg = c.blue })
   hi("WhichKeyDesc", { fg = c.cyan })
   hi("WhichKeySeparator", { fg = c.fg_muted })
   hi("WhichKeyFloat", { bg = c.bg_alt })
 
+  -- Indent guides
   hi("IblIndent", { fg = c.bg_soft })
   hi("IblScope", { fg = c.blue })
 
+  -- NvimTree
   hi("NvimTreeNormal", { fg = c.fg, bg = c.bg_alt })
   hi("NvimTreeRootFolder", { fg = c.gold, bold = true })
   hi("NvimTreeFolderName", { fg = c.cyan })
@@ -200,16 +211,16 @@ function M.apply(c, opts)
   hi("NvimTreeIndentMarker", { fg = c.bg_soft })
 
   -- Terminal colors
-  vim.g.terminal_color_0  = c.bg
-  vim.g.terminal_color_1  = c.red
-  vim.g.terminal_color_2  = c.green
-  vim.g.terminal_color_3  = c.yellow
-  vim.g.terminal_color_4  = c.blue
-  vim.g.terminal_color_5  = c.plum
-  vim.g.terminal_color_6  = c.cyan
-  vim.g.terminal_color_7  = c.fg
-  vim.g.terminal_color_8  = c.bg_soft
-  vim.g.terminal_color_9  = c.coral
+  vim.g.terminal_color_0 = c.bg
+  vim.g.terminal_color_1 = c.red
+  vim.g.terminal_color_2 = c.green
+  vim.g.terminal_color_3 = c.yellow
+  vim.g.terminal_color_4 = c.blue
+  vim.g.terminal_color_5 = c.plum
+  vim.g.terminal_color_6 = c.cyan
+  vim.g.terminal_color_7 = c.fg
+  vim.g.terminal_color_8 = c.bg_soft
+  vim.g.terminal_color_9 = c.coral
   vim.g.terminal_color_10 = c.lime
   vim.g.terminal_color_11 = c.gold
   vim.g.terminal_color_12 = c.aqua
