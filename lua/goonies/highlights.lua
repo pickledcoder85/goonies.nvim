@@ -14,10 +14,10 @@ function M.apply(c, opts)
 
   local is_day = opts.variant == "day"
 
-  local float_border = is_day and c.gold or c.blue
-  local cursorline_bg = is_day and c.bg_soft or c.bg_alt
-  local visual_bg = is_day and "#c9b67a" or c.diff_text
-  local telescope_border = is_day and c.gold or c.blue
+  local float_border = is_day and c.sand or c.blue
+  local cursorline_bg = is_day and c.bg_alt or c.bg_alt
+  local visual_bg = is_day and "#d2b06a" or c.diff_text
+  local telescope_border = is_day and c.sand or c.blue
 
   -- Base editor
   hi("Normal", { fg = c.fg, bg = c.bg })

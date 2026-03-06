@@ -4,41 +4,41 @@ function M.get(opts)
   local variant = opts.variant or "night"
 
   if variant == "day" then
-    local bg = opts.transparent and "NONE" or "#e3cca6"
+    local bg = opts.transparent and "NONE" or "#e0c79a"
 
     return {
-      bg = bg,          -- aged parchment
-      bg_alt = "#d9c095", -- darker parchment shadow
-      bg_soft = "#cfb584", -- folded paper tone
+      bg = bg,          -- golden parchment
+      bg_alt = "#ead9b8", -- sun-bleached curtain cream
+      bg_soft = "#d6bb86", -- folded map / warm paper shadow
 
-      fg = "#3b2f23",   -- sepia ink
-      fg_dim = "#5a4a39",
-      fg_muted = "#7a6a55",
+      fg = "#4a3928",   -- sepia-brown ink
+      fg_dim = "#6a5742",
+      fg_muted = "#8a775f",
 
-      gold = "#b88b2f", -- antique gold
-      sand = "#c59b63",
+      gold = "#c6922e", -- treasure/map gold
+      sand = "#d7b15c",
 
-      rust = "#9e5f3a",
-      coral = "#b86a55",
-      red = "#a64e4e",
+      rust = "#9e633d", -- warm leather/wood
+      coral = "#b87862", -- muted salmon, not pink
+      red = "#9f4b44",
 
-      plum = "#6e5b7a",
-      violet = "#8570a3",
+      plum = "#6d5b73",
+      violet = "#8570a0",
 
-      blue = "#5d7388",
-      cyan = "#4b7f79",
-      aqua = "#5fa59a",
+      blue = "#6f8798", -- washed denim
+      cyan = "#6f9f97", -- faded teal
+      aqua = "#86b6ab",
 
-      green = "#6f8052",
-      lime = "#8fa463",
+      green = "#5c6f43", -- dark fern green
+      lime = "#8ea06b",
 
-      yellow = "#d2ae58",
-      orange = "#c67a3b",
+      yellow = "#d7ad45",
+      orange = "#c97b34",
 
-      diff_add = "#d8e2cc",
-      diff_delete = "#e8d0cf",
-      diff_change = "#d8dded",
-      diff_text = "#c9d3ea",
+      diff_add = "#d7decb",
+      diff_delete = "#e2c9c2",
+      diff_change = "#d4dae6",
+      diff_text = "#c2ccde",
 
       none = "NONE",
     }
