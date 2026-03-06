@@ -14,12 +14,12 @@ function M.apply(c, opts)
 
   local is_day = opts.variant == "day"
 
-  local float_border = is_day and c.sand or c.blue
-  local cursorline_bg = is_day and c.bg_alt or c.bg_alt
-  local visual_bg = is_day and "#d2b06a" or c.diff_text
-  local telescope_border = is_day and c.sand or c.blue
+  local float_border = is_day and c.sand or c.gold
+  local cursorline_bg = is_day and c.bg_alt or c.bg_soft
+  local visual_bg = is_day and "#d8b35f" or c.diff_text
+  local telescope_border = is_day and c.sand or c.gold
+  local pmenu_bg = is_day and c.bg_alt or c.bg_alt
 
-  -- Base editor
   hi("Normal", { fg = c.fg, bg = c.bg })
   hi("NormalFloat", { fg = c.fg, bg = c.bg_alt })
   hi("FloatBorder", { fg = float_border, bg = c.bg_alt })
@@ -31,7 +31,7 @@ function M.apply(c, opts)
   hi("CursorIM", { fg = c.bg, bg = c.gold })
   hi("CursorLine", { bg = cursorline_bg })
   hi("CursorColumn", { bg = c.bg_alt })
-  hi("Directory", { fg = c.cyan, bold = true })
+  hi("Directory", { fg = c.blue, bold = true })
   hi("EndOfBuffer", { fg = c.bg })
   hi("ErrorMsg", { fg = c.red, bold = true })
   hi("VertSplit", { fg = c.bg_soft, bg = c.bg })
@@ -45,14 +45,14 @@ function M.apply(c, opts)
   hi("LineNr", { fg = c.fg_muted })
   hi("CursorLineNr", { fg = c.gold, bold = true })
   hi("MatchParen", { fg = c.gold, bg = c.bg_soft, bold = true })
-  hi("ModeMsg", { fg = c.aqua, bold = true })
-  hi("MoreMsg", { fg = c.aqua })
+  hi("ModeMsg", { fg = c.cyan, bold = true })
+  hi("MoreMsg", { fg = c.cyan })
   hi("NonText", { fg = c.bg_soft })
-  hi("Pmenu", { fg = c.fg, bg = c.bg_alt })
-  hi("PmenuSel", { fg = c.bg, bg = c.cyan, bold = true })
+  hi("Pmenu", { fg = c.fg, bg = pmenu_bg })
+  hi("PmenuSel", { fg = c.bg, bg = c.blue, bold = true })
   hi("PmenuSbar", { bg = c.bg_soft })
   hi("PmenuThumb", { bg = c.fg_muted })
-  hi("Question", { fg = c.aqua })
+  hi("Question", { fg = c.cyan })
   hi("QuickFixLine", { bg = c.bg_soft, bold = true })
   hi("SpecialKey", { fg = c.plum })
   hi("SpellBad", { sp = c.red, undercurl = true })
@@ -70,7 +70,6 @@ function M.apply(c, opts)
   hi("Whitespace", { fg = c.bg_soft })
   hi("WildMenu", { fg = c.bg, bg = c.gold, bold = true })
 
-  -- Syntax
   hi("Comment", { fg = c.fg_muted, italic = opts.italic_comments })
   hi("Constant", { fg = c.orange })
   hi("String", { fg = c.green })
@@ -79,12 +78,12 @@ function M.apply(c, opts)
   hi("Boolean", { fg = c.orange, bold = true })
   hi("Float", { fg = c.sand })
   hi("Identifier", { fg = c.fg })
-  hi("Function", { fg = c.cyan, bold = true })
+  hi("Function", { fg = c.blue, bold = true })
   hi("Statement", { fg = c.plum, bold = true })
   hi("Conditional", { fg = c.violet, bold = true })
   hi("Repeat", { fg = c.violet, bold = true })
   hi("Label", { fg = c.gold })
-  hi("Operator", { fg = c.coral })
+  hi("Operator", { fg = c.rust })
   hi("Keyword", { fg = c.plum, italic = true })
   hi("Exception", { fg = c.red, bold = true })
   hi("PreProc", { fg = c.gold })
@@ -92,7 +91,7 @@ function M.apply(c, opts)
   hi("Define", { fg = c.orange })
   hi("Macro", { fg = c.orange })
   hi("PreCondit", { fg = c.yellow })
-  hi("Type", { fg = c.blue, bold = true })
+  hi("Type", { fg = c.cyan, bold = true })
   hi("StorageClass", { fg = c.blue })
   hi("Structure", { fg = c.blue })
   hi("Typedef", { fg = c.blue, italic = true })
@@ -109,22 +108,22 @@ function M.apply(c, opts)
   hi("Error", { fg = c.red, bold = true })
   hi("Todo", { fg = c.bg, bg = c.gold, bold = true })
 
-  -- Diagnostics
   hi("DiagnosticError", { fg = c.red })
   hi("DiagnosticWarn", { fg = c.orange })
   hi("DiagnosticInfo", { fg = c.blue })
   hi("DiagnosticHint", { fg = c.cyan })
   hi("DiagnosticOk", { fg = c.green })
-  hi("DiagnosticVirtualTextError", { fg = c.red, bg = c.bg_alt })
-  hi("DiagnosticVirtualTextWarn", { fg = c.orange, bg = c.bg_alt })
-  hi("DiagnosticVirtualTextInfo", { fg = c.blue, bg = c.bg_alt })
-  hi("DiagnosticVirtualTextHint", { fg = c.cyan, bg = c.bg_alt })
+
+  hi("DiagnosticVirtualTextError", { fg = c.red, bg = is_day and c.bg_soft or c.bg_alt })
+  hi("DiagnosticVirtualTextWarn", { fg = c.rust, bg = is_day and c.bg_soft or c.bg_alt })
+  hi("DiagnosticVirtualTextInfo", { fg = c.blue, bg = is_day and c.bg_soft or c.bg_alt })
+  hi("DiagnosticVirtualTextHint", { fg = c.cyan, bg = is_day and c.bg_soft or c.bg_alt })
+
   hi("DiagnosticUnderlineError", { sp = c.red, undercurl = true })
   hi("DiagnosticUnderlineWarn", { sp = c.orange, undercurl = true })
   hi("DiagnosticUnderlineInfo", { sp = c.blue, undercurl = true })
   hi("DiagnosticUnderlineHint", { sp = c.cyan, undercurl = true })
 
-  -- Diff / Git
   hi("DiffAdd", { bg = c.diff_add })
   hi("DiffDelete", { bg = c.diff_delete })
   hi("DiffChange", { bg = c.diff_change })
@@ -133,13 +132,12 @@ function M.apply(c, opts)
   hi("GitSignsChange", { fg = c.blue })
   hi("GitSignsDelete", { fg = c.red })
 
-  -- Treesitter
   hi("@comment", { link = "Comment" })
   hi("@keyword", { link = "Keyword" })
   hi("@keyword.function", { fg = c.plum, bold = true })
   hi("@keyword.return", { fg = c.violet, italic = true })
   hi("@variable", { fg = c.fg })
-  hi("@variable.builtin", { fg = c.coral, italic = true })
+  hi("@variable.builtin", { fg = c.rust, italic = true })
   hi("@constant", { link = "Constant" })
   hi("@constant.builtin", { fg = c.orange, bold = true })
   hi("@string", { link = "String" })
@@ -160,7 +158,6 @@ function M.apply(c, opts)
   hi("@tag", { fg = c.gold })
   hi("@tag.attribute", { fg = c.cyan })
 
-  -- LSP semantic tokens
   hi("@lsp.type.function", { link = "Function" })
   hi("@lsp.type.method", { fg = c.aqua })
   hi("@lsp.type.parameter", { fg = c.fg_dim })
@@ -169,7 +166,6 @@ function M.apply(c, opts)
   hi("@lsp.type.keyword", { link = "Keyword" })
   hi("@lsp.type.type", { link = "Type" })
 
-  -- Telescope
   hi("TelescopeNormal", { fg = c.fg, bg = c.bg_alt })
   hi("TelescopeBorder", { fg = telescope_border, bg = c.bg_alt })
   hi("TelescopePromptBorder", { fg = c.gold, bg = c.bg_alt })
@@ -179,38 +175,33 @@ function M.apply(c, opts)
   hi("TelescopeSelection", { bg = c.bg_soft, bold = true })
   hi("TelescopeMatching", { fg = c.gold, bold = true })
 
-  -- Completion
   hi("CmpItemAbbr", { fg = c.fg })
   hi("CmpItemAbbrMatch", { fg = c.gold, bold = true })
   hi("CmpItemAbbrMatchFuzzy", { fg = c.yellow, bold = true })
   hi("CmpItemMenu", { fg = c.fg_muted })
-  hi("CmpItemKindFunction", { fg = c.cyan })
+  hi("CmpItemKindFunction", { fg = c.blue })
   hi("CmpItemKindMethod", { fg = c.aqua })
   hi("CmpItemKindVariable", { fg = c.fg_dim })
-  hi("CmpItemKindClass", { fg = c.blue })
+  hi("CmpItemKindClass", { fg = c.cyan })
   hi("CmpItemKindKeyword", { fg = c.plum })
   hi("CmpItemKindSnippet", { fg = c.orange })
 
-  -- WhichKey
   hi("WhichKey", { fg = c.gold, bold = true })
   hi("WhichKeyGroup", { fg = c.blue })
   hi("WhichKeyDesc", { fg = c.cyan })
   hi("WhichKeySeparator", { fg = c.fg_muted })
   hi("WhichKeyFloat", { bg = c.bg_alt })
 
-  -- Indent guides
   hi("IblIndent", { fg = c.bg_soft })
   hi("IblScope", { fg = c.blue })
 
-  -- NvimTree
   hi("NvimTreeNormal", { fg = c.fg, bg = c.bg_alt })
   hi("NvimTreeRootFolder", { fg = c.gold, bold = true })
-  hi("NvimTreeFolderName", { fg = c.cyan })
+  hi("NvimTreeFolderName", { fg = c.blue })
   hi("NvimTreeOpenedFolderName", { fg = c.aqua, bold = true })
   hi("NvimTreeEmptyFolderName", { fg = c.fg_muted, italic = true })
   hi("NvimTreeIndentMarker", { fg = c.bg_soft })
 
-  -- Terminal colors
   vim.g.terminal_color_0 = c.bg
   vim.g.terminal_color_1 = c.red
   vim.g.terminal_color_2 = c.green

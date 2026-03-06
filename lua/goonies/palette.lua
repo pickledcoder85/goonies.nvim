@@ -4,41 +4,41 @@ function M.get(opts)
   local variant = opts.variant or "night"
 
   if variant == "day" then
-    local bg = opts.transparent and "NONE" or "#e0c79a"
+    local bg = opts.transparent and "NONE" or "#efe2c4"
 
     return {
-      bg = bg,          -- golden parchment
-      bg_alt = "#ead9b8", -- sun-bleached curtain cream
-      bg_soft = "#d6bb86", -- folded map / warm paper shadow
+      bg = bg,          -- sun-bleached curtain cream
+      bg_alt = "#e3cca6", -- golden parchment
+      bg_soft = "#d6b88a", -- folded map shadow
 
-      fg = "#4a3928",   -- sepia-brown ink
+      fg = "#4b3928",   -- sepia-brown ink
       fg_dim = "#6a5742",
-      fg_muted = "#8a775f",
+      fg_muted = "#8b755b",
 
-      gold = "#c6922e", -- treasure/map gold
-      sand = "#d7b15c",
+      gold = "#c7962d", -- treasure-map gold
+      sand = "#d8b35f",
 
-      rust = "#9e633d", -- warm leather/wood
-      coral = "#b87862", -- muted salmon, not pink
-      red = "#9f4b44",
+      rust = "#9d633d", -- leather / wood
+      coral = "#b6735b", -- dusty warm salmon
+      red = "#9e4a42",
 
-      plum = "#6d5b73",
-      violet = "#8570a0",
+      plum = "#6b5a72",
+      violet = "#826e9c",
 
-      blue = "#6f8798", -- washed denim
-      cyan = "#6f9f97", -- faded teal
-      aqua = "#86b6ab",
+      blue = "#6f8799", -- washed denim
+      cyan = "#6d9b95", -- faded teal
+      aqua = "#86b6ae",
 
-      green = "#5c6f43", -- dark fern green
-      lime = "#8ea06b",
+      green = "#586c43", -- dark fern green
+      lime = "#869b66",
 
-      yellow = "#d7ad45",
-      orange = "#c97b34",
+      yellow = "#d6ad45",
+      orange = "#c77a33",
 
-      diff_add = "#d7decb",
-      diff_delete = "#e2c9c2",
-      diff_change = "#d4dae6",
-      diff_text = "#c2ccde",
+      diff_add = "#dbe3d1",
+      diff_delete = "#e6d0ca",
+      diff_change = "#d8dee8",
+      diff_text = "#c7d1e0",
 
       none = "NONE",
     }
@@ -48,33 +48,33 @@ function M.get(opts)
     local bg = opts.transparent and "NONE" or "#16110d"
 
     return {
-      bg = bg,          -- cave shadow
-      bg_alt = "#211913", -- rock wall
-      bg_soft = "#2b2119", -- torch falloff
+      bg = bg,
+      bg_alt = "#211913",
+      bg_soft = "#2b2119",
 
-      fg = "#d8c3a1",   -- old parchment in torchlight
+      fg = "#d8c3a1",
       fg_dim = "#aa9477",
       fg_muted = "#7f6c56",
 
-      gold = "#d2a33a", -- treasure glow
+      gold = "#d2a33a",
       sand = "#b99257",
 
-      rust = "#8f4f2a", -- rope/leather/wood
+      rust = "#8f4f2a",
       coral = "#a85f3d",
       red = "#9a3f32",
 
       plum = "#5f4b62",
       violet = "#7b6293",
 
-      blue = "#4b5e6d", -- minimal cold cave tone
-      cyan = "#4d7b74", -- wet stone / sea hint
+      blue = "#4b5e6d",
+      cyan = "#4d7b74",
       aqua = "#67988f",
 
       green = "#64724b",
       lime = "#7f9160",
 
-      yellow = "#e0b84d", -- torch core
-      orange = "#c9782f", -- flame edge
+      yellow = "#e0b84d",
+      orange = "#c9782f",
 
       diff_add = "#243126",
       diff_delete = "#3a2320",
