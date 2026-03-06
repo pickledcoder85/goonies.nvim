@@ -4,11 +4,11 @@ A **Neovim colorscheme inspired by 1980s adventure movies**, especially *The Goo
 
 The palette draws inspiration from:
 
-- torchlit caves  
-- pirate treasure gold  
-- aged parchment maps  
-- leather, rope, and wood tones  
-- moonlit Pacific Northwest coastlines  
+- torchlit caves
+- pirate treasure gold
+- aged parchment maps
+- leather, rope, and wood tones
+- moonlit Pacific Northwest coastlines
 
 The goal is a warm, nostalgic editing experience that feels like exploring a treasure map in an attic or cave.
 
@@ -47,55 +47,51 @@ Torchlight exploration.
 
 # Palette Preview
 
-### goonies-night
+## `goonies-night`
 
-<div style="display:flex;gap:6px;margin-top:6px;margin-bottom:10px">
-<div style="width:40px;height:40px;background:#141923"></div>
-<div style="width:40px;height:40px;background:#1a2230"></div>
-<div style="width:40px;height:40px;background:#212c3d"></div>
-<div style="width:40px;height:40px;background:#e7dcc2"></div>
-<div style="width:40px;height:40px;background:#d7a94b"></div>
-<div style="width:40px;height:40px;background:#5f87b3"></div>
-<div style="width:40px;height:40px;background:#5da7a0"></div>
-<div style="width:40px;height:40px;background:#7c9a62"></div>
-<div style="width:40px;height:40px;background:#d98c4a"></div>
-</div>
+| Role | Hex |
+|---|---|
+| Background | `#141923` |
+| Background Alt | `#1a2230` |
+| Background Soft | `#212c3d` |
+| Foreground | `#e7dcc2` |
+| Gold | `#d7a94b` |
+| Blue | `#5f87b3` |
+| Cyan | `#5da7a0` |
+| Green | `#7c9a62` |
+| Orange | `#d98c4a` |
 
 Moonlit cave blues with parchment foregrounds and pirate-gold accents.
 
----
+## `goonies-day`
 
-### goonies-day
-
-<div style="display:flex;gap:6px;margin-top:6px;margin-bottom:10px">
-<div style="width:40px;height:40px;background:#e1d2a3"></div>
-<div style="width:40px;height:40px;background:#d4c28f"></div>
-<div style="width:40px;height:40px;background:#c9b57b"></div>
-<div style="width:40px;height:40px;background:#3f3124"></div>
-<div style="width:40px;height:40px;background:#c89b3c"></div>
-<div style="width:40px;height:40px;background:#5f768a"></div>
-<div style="width:40px;height:40px;background:#6a7c50"></div>
-<div style="width:40px;height:40px;background:#c7752e"></div>
-<div style="width:40px;height:40px;background:#8e4f2a"></div>
-</div>
+| Role | Hex |
+|---|---|
+| Background | `#e1d2a3` |
+| Background Alt | `#d4c28f` |
+| Background Soft | `#c9b57b` |
+| Foreground | `#3f3124` |
+| Gold | `#c89b3c` |
+| Blue | `#5f768a` |
+| Green | `#6a7c50` |
+| Orange | `#c7752e` |
+| Rust | `#8e4f2a` |
 
 Dusty treasure-map parchment with sepia ink and brass highlights.
 
----
+## `goonies-cave`
 
-### goonies-cave
-
-<div style="display:flex;gap:6px;margin-top:6px;margin-bottom:10px">
-<div style="width:40px;height:40px;background:#16110d"></div>
-<div style="width:40px;height:40px;background:#211913"></div>
-<div style="width:40px;height:40px;background:#2b2119"></div>
-<div style="width:40px;height:40px;background:#d8c3a1"></div>
-<div style="width:40px;height:40px;background:#d2a33a"></div>
-<div style="width:40px;height:40px;background:#c9782f"></div>
-<div style="width:40px;height:40px;background:#8f4f2a"></div>
-<div style="width:40px;height:40px;background:#4d7b74"></div>
-<div style="width:40px;height:40px;background:#64724b"></div>
-</div>
+| Role | Hex |
+|---|---|
+| Background | `#16110d` |
+| Background Alt | `#211913` |
+| Background Soft | `#2b2119` |
+| Foreground | `#d8c3a1` |
+| Gold | `#d2a33a` |
+| Orange | `#c9782f` |
+| Rust | `#8f4f2a` |
+| Cyan | `#4d7b74` |
+| Green | `#64724b` |
 
 Torch-lit cave shadows with glowing treasure gold and warm firelight.
 
@@ -131,8 +127,6 @@ or
 ```lua
 vim.cmd.colorscheme("goonies-cave")
 ```
-
----
 
 ### Local development
 
@@ -195,12 +189,23 @@ Works well with:
 
 *(coming soon)*
 
-Example variants:
+Suggested screenshot files:
 
-```
-goonies-night
-goonies-day
-goonies-cave
+- `screenshots/goonies-night.png`
+- `screenshots/goonies-day.png`
+- `screenshots/goonies-cave.png`
+
+Example markdown once added:
+
+```md
+## goonies-night
+![goonies-night](./screenshots/goonies-night.png)
+
+## goonies-day
+![goonies-day](./screenshots/goonies-day.png)
+
+## goonies-cave
+![goonies-cave](./screenshots/goonies-cave.png)
 ```
 
 ---
