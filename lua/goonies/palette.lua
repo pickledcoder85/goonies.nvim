@@ -4,41 +4,41 @@ function M.get(opts)
   local variant = opts.variant or "night"
 
   if variant == "day" then
-    local bg = opts.transparent and "NONE" or "#e1d2a3"
+    local bg = opts.transparent and "NONE" or "#e3cca6"
 
     return {
-      bg = bg,
-      bg_alt = "#d4c28f",
-      bg_soft = "#c9b57b",
+      bg = bg,          -- aged parchment
+      bg_alt = "#d9c095", -- darker parchment shadow
+      bg_soft = "#cfb584", -- folded paper tone
 
-      fg = "#3f3124",
-      fg_dim = "#5e4c37",
-      fg_muted = "#7b684f",
+      fg = "#3b2f23",   -- sepia ink
+      fg_dim = "#5a4a39",
+      fg_muted = "#7a6a55",
 
-      gold = "#c89b3c",
-      sand = "#d5b96a",
+      gold = "#b88b2f", -- antique gold
+      sand = "#c59b63",
 
-      rust = "#8e4f2a",
-      coral = "#a66242",
-      red = "#8f2d2d",
+      rust = "#9e5f3a",
+      coral = "#b86a55",
+      red = "#a64e4e",
 
-      plum = "#6a566f",
-      violet = "#836ca3",
+      plum = "#6e5b7a",
+      violet = "#8570a3",
 
-      blue = "#5f768a",
-      cyan = "#4d867f",
-      aqua = "#69a49a",
+      blue = "#5d7388",
+      cyan = "#4b7f79",
+      aqua = "#5fa59a",
 
-      green = "#6a7c50",
-      lime = "#869c63",
+      green = "#6f8052",
+      lime = "#8fa463",
 
-      yellow = "#d4b24c",
-      orange = "#c7752e",
+      yellow = "#d2ae58",
+      orange = "#c67a3b",
 
-      diff_add = "#d7dfc7",
-      diff_delete = "#e0c2bc",
-      diff_change = "#d2d6e3",
-      diff_text = "#c1c9dc",
+      diff_add = "#d8e2cc",
+      diff_delete = "#e8d0cf",
+      diff_change = "#d8dded",
+      diff_text = "#c9d3ea",
 
       none = "NONE",
     }
