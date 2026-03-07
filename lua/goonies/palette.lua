@@ -4,41 +4,45 @@ function M.get(opts)
   local variant = opts.variant or "night"
 
   if variant == "day" then
-    local bg = opts.transparent and "NONE" or "#b78c49"
+    local bg = opts.transparent and "NONE" or "#cf9e5b"
 
     return {
-      bg = bg,          -- aged bronze poster
-      bg_alt = "#d3a963", -- warm gold highlight
-      bg_soft = "#9e763d", -- darker bronze shadow
+      bg = bg,          -- faded treasure-map orange parchment
+      bg_alt = "#ddb170", -- lighter map surface
+      bg_soft = "#b98749", -- darker fold/shadow
 
       fg = "#2f2418",   -- dark ink
-      fg_dim = "#4b3b29",
-      fg_muted = "#6b5740",
+      fg_dim = "#4a3927",
+      fg_muted = "#6a543b",
 
-      gold = "#e2b24c", -- treasure highlight
-      sand = "#d3a15a",
+      gold = "#e0b44a", -- treasure highlight
+      sand = "#d3a15b",
 
-      rust = "#7f4728", -- rope/leather
-      coral = "#9b5c42",
-      red = "#7d342d",
+      rust = "#8c4e2b", -- rope / leather
+      coral = "#9d5c46",
+      red = "#7f2f2d", -- map X / route red
 
-      plum = "#574a63",
-      violet = "#6e5a8e",
+      plum = "#5f3a45", -- muted burgundy-plum
+      violet = "#744e63",
 
-      blue = "#546a7c", -- washed denim
-      cyan = "#4f847c",
-      aqua = "#6ea79d",
+      blue = "#253f5a", -- deep nautical ink
+      cyan = "#3f6a68",
+      aqua = "#5f9088",
 
-      green = "#4d5f3a", -- fern green
-      lime = "#758b56",
+      green = "#4e5c36", -- muted expedition green
+      lime = "#6d8150",
 
-      yellow = "#e5bb52",
-      orange = "#c06f2d",
+      yellow = "#e7c15a",
+      orange = "#c6722e",
 
-      diff_add = "#d4ddc7",
-      diff_delete = "#e0c5bf",
-      diff_change = "#d2d7e3",
-      diff_text = "#c0cae0",
+      diff_add = "#d7dfc9",
+      diff_delete = "#e1c6be",
+      diff_change = "#d4d9e6",
+      diff_text = "#c2cce0",
+
+      white = "#f4ead7", -- occasional chalk/ivory emphasis
+      ink = "#241b12",   -- darkest script
+      burgundy = "#6f2629", -- richer treasure-map mark red
 
       none = "NONE",
     }
@@ -81,6 +85,10 @@ function M.get(opts)
       diff_change = "#2d313a",
       diff_text = "#4a4130",
 
+      white = "#efe4cf",
+      ink = "#0f0c09",
+      burgundy = "#7d3a3a",
+
       none = "NONE",
     }
   end
@@ -120,6 +128,10 @@ function M.get(opts)
     diff_delete = "#3a2225",
     diff_change = "#2a3145",
     diff_text = "#394766",
+
+    white = "#f2eadb",
+    ink = "#11161f",
+    burgundy = "#8a4451",
 
     none = "NONE",
   }
