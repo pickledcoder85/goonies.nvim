@@ -4,7 +4,7 @@ function M.get(opts)
   local variant = opts.variant or "night"
 
   if variant == "day" then
-    local bg = opts.transparent and "NONE" or "#cf9e5b"
+    local bg = opts.transparent and "NONE" or "#e7c8a0"
 
     return {
       bg = bg,          -- faded treasure-map orange parchment
