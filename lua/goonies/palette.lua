@@ -3,50 +3,94 @@ local M = {}
 function M.get(opts)
   local variant = opts.variant or "night"
 
+  --------------------------------------------------
+  -- DAY (Treasure Map)
+  --------------------------------------------------
+
   if variant == "day" then
     local bg = opts.transparent and "NONE" or "#e7c8a0"
 
     return {
-      bg = bg,          -- faded treasure-map orange parchment
-      bg_alt = "#ddb170", -- lighter map surface
-      bg_soft = "#b98749", -- darker fold/shadow
 
-      fg = "#2f2418",   -- dark ink
-      fg_dim = "#4a3927",
-      fg_muted = "#6a543b",
+      --------------------------------------------------
+      -- parchment backgrounds
+      --------------------------------------------------
 
-      gold = "#e0b44a", -- treasure highlight
-      sand = "#d3a15b",
+      bg = bg,
+      bg_alt = "#edd3b3",
+      bg_soft = "#d6b389",
 
-      rust = "#8c4e2b", -- rope / leather
-      coral = "#9d5c46",
-      red = "#7f2f2d", -- map X / route red
+      --------------------------------------------------
+      -- ink colors
+      --------------------------------------------------
 
-      plum = "#5f3a45", -- muted burgundy-plum
-      violet = "#744e63",
+      fg = "#24180f", -- main ink
+      fg_dim = "#4b3626",
+      fg_muted = "#6f5741",
 
-      blue = "#253f5a", -- deep nautical ink
-      cyan = "#3f6a68",
-      aqua = "#5f9088",
+      ink = "#1a120a", -- darkest ink
 
-      green = "#4e5c36", -- muted expedition green
-      lime = "#6d8150",
+      --------------------------------------------------
+      -- treasure / parchment accents
+      --------------------------------------------------
 
-      yellow = "#e7c15a",
-      orange = "#c6722e",
+      gold = "#d9a441",
+      sand = "#cfa06a",
 
-      diff_add = "#d7dfc9",
-      diff_delete = "#e1c6be",
-      diff_change = "#d4d9e6",
-      diff_text = "#c2cce0",
+      rust = "#8b4a2a",
+      coral = "#c4673d",
 
-      white = "#f4ead7", -- occasional chalk/ivory emphasis
-      ink = "#241b12",   -- darkest script
-      burgundy = "#6f2629", -- richer treasure-map mark red
+      --------------------------------------------------
+      -- MAP RED (important)
+      --------------------------------------------------
+
+      red = "#b21f2d",   -- bright treasure map red
+      burgundy = "#8f1b26", -- deeper route marking
+
+      --------------------------------------------------
+      -- nautical blue
+      --------------------------------------------------
+
+      blue = "#1f4f7a", -- strong ink blue
+      cyan = "#3e7b87",
+      aqua = "#5f9ea0",
+
+      --------------------------------------------------
+      -- expedition greens
+      --------------------------------------------------
+
+      green = "#3f5a2c",
+      lime = "#6e8a49",
+
+      --------------------------------------------------
+      -- parchment highlights
+      --------------------------------------------------
+
+      yellow = "#e4c05a",
+      orange = "#c9772f",
+
+      --------------------------------------------------
+      -- diff colors
+      --------------------------------------------------
+
+      diff_add = "#d9e3cc",
+      diff_delete = "#e5c8c5",
+      diff_change = "#d4dae8",
+      diff_text = "#c7d0e4",
+
+      --------------------------------------------------
+      -- highlight accents
+      --------------------------------------------------
+
+      white = "#f5ecdb",
 
       none = "NONE",
     }
   end
+
+  --------------------------------------------------
+  -- CAVE THEME
+  --------------------------------------------------
 
   if variant == "cave" then
     local bg = opts.transparent and "NONE" or "#16110d"
@@ -86,16 +130,19 @@ function M.get(opts)
       diff_text = "#4a4130",
 
       white = "#efe4cf",
-      ink = "#0f0c09",
-      burgundy = "#7d3a3a",
 
       none = "NONE",
     }
   end
 
+  --------------------------------------------------
+  -- NIGHT THEME
+  --------------------------------------------------
+
   local bg = opts.transparent and "NONE" or "#141923"
 
   return {
+
     bg = bg,
     bg_alt = "#1a2230",
     bg_soft = "#212c3d",
@@ -130,8 +177,6 @@ function M.get(opts)
     diff_text = "#394766",
 
     white = "#f2eadb",
-    ink = "#11161f",
-    burgundy = "#8a4451",
 
     none = "NONE",
   }
