@@ -30,9 +30,8 @@ function M.apply(c, opts)
   local visual_bg = is_day and "#efcf86" or c.diff_text
   local pmenu_sel_bg = is_day and c.blue or c.cyan
   local telescope_border = is_day and c.rust or c.gold
-  local diag_bg = is_day and c.bg_alt or c.bg_alt
+  local diag_bg = c.bg_alt
 
-  -- Base editor
   hi("Normal", { fg = text_main, bg = c.bg })
   hi("NormalFloat", { fg = text_main, bg = float_bg })
   hi("FloatBorder", { fg = float_border, bg = float_bg })
@@ -83,7 +82,6 @@ function M.apply(c, opts)
   hi("Whitespace", { fg = c.bg_soft })
   hi("WildMenu", { fg = c.bg, bg = text_emph, bold = true })
 
-  -- Syntax
   hi("Comment", { fg = text_muted, italic = opts.italic_comments })
   hi("Constant", { fg = text_warm })
   hi("String", { fg = text_green })
@@ -122,7 +120,6 @@ function M.apply(c, opts)
   hi("Error", { fg = text_red, bold = true })
   hi("Todo", { fg = c.bg, bg = text_emph, bold = true })
 
-  -- Diagnostics
   hi("DiagnosticError", { fg = text_red })
   hi("DiagnosticWarn", { fg = c.orange })
   hi("DiagnosticInfo", { fg = text_blue })
@@ -132,113 +129,33 @@ function M.apply(c, opts)
   hi("DiagnosticVirtualTextWarn", { fg = c.orange, bg = diag_bg })
   hi("DiagnosticVirtualTextInfo", { fg = text_blue, bg = diag_bg })
   hi("DiagnosticVirtualTextHint", { fg = c.cyan, bg = diag_bg })
-  hi("DiagnosticUnderlineError", { sp = text_red, undercurl = true })
-  hi("DiagnosticUnderlineWarn", { sp = c.orange, undercurl = true })
-  hi("DiagnosticUnderlineInfo", { sp = text_blue, undercurl = true })
-  hi("DiagnosticUnderlineHint", { sp = c.cyan, undercurl = true })
 
-  -- Diff / Git
   hi("DiffAdd", { bg = c.diff_add })
   hi("DiffDelete", { bg = c.diff_delete })
   hi("DiffChange", { bg = c.diff_change })
   hi("DiffText", { bg = c.diff_text })
-  hi("GitSignsAdd", { fg = text_green })
-  hi("GitSignsChange", { fg = text_blue })
-  hi("GitSignsDelete", { fg = text_red })
 
-  -- Treesitter / semantic
   hi("@comment", { link = "Comment" })
   hi("@keyword", { link = "Keyword" })
-  hi("@keyword.function", { fg = text_red, bold = true })
-  hi("@keyword.return", { fg = text_red, italic = true })
   hi("@variable", { fg = text_main })
-  hi("@variable.builtin", { fg = text_warm, italic = true })
-  hi("@constant", { link = "Constant" })
-  hi("@constant.builtin", { fg = text_red, bold = true })
   hi("@string", { link = "String" })
-  hi("@string.escape", { fg = text_emph })
   hi("@number", { link = "Number" })
   hi("@boolean", { link = "Boolean" })
   hi("@function", { link = "Function" })
-  hi("@function.builtin", { fg = text_blue, italic = true })
-  hi("@method", { fg = text_blue })
-  hi("@constructor", { fg = text_emph, bold = true })
   hi("@parameter", { fg = text_dim })
   hi("@field", { fg = text_blue })
   hi("@property", { fg = text_blue })
   hi("@type", { link = "Type" })
-  hi("@type.builtin", { fg = text_blue, italic = true })
   hi("@punctuation.delimiter", { fg = text_dim })
   hi("@punctuation.bracket", { fg = text_dim })
+
+  -- Markdown fenced code
+  hi("@punctuation.delimiter.markdown", { link = "Delimiter" })
+  hi("@markup.raw.markdown", { link = "String" })
+  hi("@text.literal.markdown", { link = "String" })
+
   hi("@tag", { fg = text_emph, bold = true })
   hi("@tag.attribute", { fg = text_blue })
-
-  hi("@lsp.type.function", { link = "Function" })
-  hi("@lsp.type.method", { fg = text_blue })
-  hi("@lsp.type.parameter", { fg = text_dim })
-  hi("@lsp.type.variable", { fg = text_main })
-  hi("@lsp.type.property", { fg = text_blue })
-  hi("@lsp.type.keyword", { link = "Keyword" })
-  hi("@lsp.type.type", { link = "Type" })
-
-  -- Telescope
-  hi("TelescopeNormal", { fg = text_main, bg = float_bg })
-  hi("TelescopeBorder", { fg = telescope_border, bg = float_bg })
-  hi("TelescopePromptBorder", { fg = text_warm, bg = float_bg })
-  hi("TelescopePromptTitle", { fg = c.bg, bg = text_emph, bold = true })
-  hi("TelescopeResultsTitle", { fg = c.white, bg = text_blue, bold = true })
-  hi("TelescopePreviewTitle", { fg = c.white, bg = text_red, bold = true })
-  hi("TelescopeSelection", { bg = c.bg_soft, bold = true })
-  hi("TelescopeMatching", { fg = text_emph, bold = true })
-
-  -- Completion
-  hi("CmpItemAbbr", { fg = text_main })
-  hi("CmpItemAbbrMatch", { fg = text_emph, bold = true })
-  hi("CmpItemAbbrMatchFuzzy", { fg = text_warm, bold = true })
-  hi("CmpItemMenu", { fg = text_muted })
-  hi("CmpItemKindFunction", { fg = text_blue })
-  hi("CmpItemKindMethod", { fg = text_blue })
-  hi("CmpItemKindVariable", { fg = text_main })
-  hi("CmpItemKindClass", { fg = text_emph })
-  hi("CmpItemKindKeyword", { fg = text_red })
-  hi("CmpItemKindSnippet", { fg = text_warm })
-
-  -- WhichKey
-  hi("WhichKey", { fg = text_emph, bold = true })
-  hi("WhichKeyGroup", { fg = text_blue })
-  hi("WhichKeyDesc", { fg = text_red })
-  hi("WhichKeySeparator", { fg = text_muted })
-  hi("WhichKeyFloat", { bg = float_bg })
-
-  -- Indent guides
-  hi("IblIndent", { fg = c.bg_soft })
-  hi("IblScope", { fg = text_blue })
-
-  -- NvimTree
-  hi("NvimTreeNormal", { fg = text_main, bg = float_bg })
-  hi("NvimTreeRootFolder", { fg = text_emph, bold = true })
-  hi("NvimTreeFolderName", { fg = text_blue })
-  hi("NvimTreeOpenedFolderName", { fg = text_emph, bold = true })
-  hi("NvimTreeEmptyFolderName", { fg = text_muted, italic = true })
-  hi("NvimTreeIndentMarker", { fg = c.bg_soft })
-
-  -- Terminal colors
-  vim.g.terminal_color_0 = c.bg
-  vim.g.terminal_color_1 = c.red
-  vim.g.terminal_color_2 = c.green
-  vim.g.terminal_color_3 = c.yellow
-  vim.g.terminal_color_4 = c.blue
-  vim.g.terminal_color_5 = c.burgundy
-  vim.g.terminal_color_6 = c.cyan
-  vim.g.terminal_color_7 = c.white
-  vim.g.terminal_color_8 = c.bg_soft
-  vim.g.terminal_color_9 = c.coral
-  vim.g.terminal_color_10 = c.lime
-  vim.g.terminal_color_11 = c.gold
-  vim.g.terminal_color_12 = c.aqua
-  vim.g.terminal_color_13 = c.burgundy
-  vim.g.terminal_color_14 = c.aqua
-  vim.g.terminal_color_15 = c.white
 end
 
 return M
